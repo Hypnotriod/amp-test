@@ -21,7 +21,7 @@ public:
         ERROR = 1,
     };
 
-    Status process(const char * srcPath, const char * destPath, double factor, size_t ratio, double threshold);
+    Status process(const char * srcPath, const char * destPath, double factor, double threshold);
 private:
 
 };

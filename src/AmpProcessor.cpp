@@ -4,6 +4,8 @@
  * Author: Ilya Pikin
  */
 
+#include <cmath>
+
 #include "AmpProcessor.h"
 #include "WavFileReader.h"
 #include "WavFileWriter.h"
@@ -15,7 +17,7 @@ AmpProcessor::~AmpProcessor() {
 }
 
 AmpProcessor::Status AmpProcessor::process(
-        const char * srcPath, const char * destPath, double factor, size_t ratio, double threshold) {
+        const char * srcPath, const char * destPath, double factor, double threshold) {
     WavFileReader reader;
     WavFileReader::Status readerStatus;
     WavFileWriter writer;
@@ -23,6 +25,7 @@ AmpProcessor::Status AmpProcessor::process(
     double ioSampleBuff[IO_SAMPLE_BUFF_SIZE];
     size_t samplesRead;
     double sample;
+    double f;
 
     if (reader.open(srcPath) != WavFileReader::OK || writer.open(destPath) != WavFileWriter::OK)
         return ERROR;
@@ -34,18 +37,20 @@ AmpProcessor::Status AmpProcessor::process(
         if (readerStatus == WavFileReader::READ_ERROR)
             break;
 
-        for (size_t n = ratio; n > 0; n--) {
+        for (double n = factor; n >= 0; n -= 1) {
+            f = n > 1 ? 1 : n;
             for (size_t i = 0; i < samplesRead; i++) {
                 sample = ioSampleBuff[i] > 0 ? ioSampleBuff[i] : -ioSampleBuff[i];
                 sample = (sample - sample * sample * 0.5) * 2;
                 if (ioSampleBuff[i] < 0) sample = -sample;
-                ioSampleBuff[i] = ioSampleBuff[i] * (1 - factor) + sample * factor;
-                if (n == 1) {
+                ioSampleBuff[i] = ioSampleBuff[i] * (1 - f) + sample * f;
+                if (n <= 1) {
                     ioSampleBuff[i] *= threshold;
                     if (ioSampleBuff[i] < -1) ioSampleBuff[i] = -1;
                     if (ioSampleBuff[i] > 1) ioSampleBuff[i] = 1;
                 }
             }
+            f -= 1;
         }
         
 

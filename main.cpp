@@ -22,7 +22,7 @@ int main(int argc, char** argv) {
     AmpProcessor ampProcessor;
     AmpProcessor::Status status;
     
-    status = ampProcessor.process("data/input.wav", "data/output.wav", 1, 2, 0.594);
+    status = ampProcessor.process("data/input.wav", "data/output.wav", 1.5, 0.594);
     
     if (status != AmpProcessor::OK) {
         cout << "Failed.";
