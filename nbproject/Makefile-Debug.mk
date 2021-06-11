@@ -37,7 +37,6 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/src/AmpProcessor.o \
-	${OBJECTDIR}/src/AmpWindow.o \
 	${OBJECTDIR}/src/WavFileReader.o \
 	${OBJECTDIR}/src/WavFileWriter.o
 
@@ -75,11 +74,6 @@ ${OBJECTDIR}/src/AmpProcessor.o: src/AmpProcessor.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Iinclude -Isrc -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/AmpProcessor.o src/AmpProcessor.cpp
-
-${OBJECTDIR}/src/AmpWindow.o: src/AmpWindow.cpp
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -Isrc -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/AmpWindow.o src/AmpWindow.cpp
 
 ${OBJECTDIR}/src/WavFileReader.o: src/WavFileReader.cpp
 	${MKDIR} -p ${OBJECTDIR}/src

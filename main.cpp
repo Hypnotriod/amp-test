@@ -11,18 +11,18 @@
 #include "WavFileReader.h"
 #include "WavFileWriter.h"
 #include "AmpProcessor.h"
-#include "AmpWindow.h"
+
+/**
+ * threshold (peak) value = 1 / (2 ^ (db / 6))
+ */
 
 using namespace std;
-
-const double window[] = {1, 2, 1.5, 1, 1};
 
 int main(int argc, char** argv) {
     AmpProcessor ampProcessor;
     AmpProcessor::Status status;
-    AmpWindow ampWindow(window, sizeof(window) / sizeof(window[0]), 32);
     
-    status = ampProcessor.process("data/input.wav", "data/output.wav", ampWindow);
+    status = ampProcessor.process("data/input.wav", "data/output.wav", 1, 2, 0.594);
     
     if (status != AmpProcessor::OK) {
         cout << "Failed.";

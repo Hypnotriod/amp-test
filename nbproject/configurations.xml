@@ -5,7 +5,6 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>include/AmpProcessor.h</itemPath>
-      <itemPath>include/AmpWindow.h</itemPath>
       <itemPath>include/WavFileHeader.h</itemPath>
       <itemPath>include/WavFileReader.h</itemPath>
       <itemPath>include/WavFileWriter.h</itemPath>
@@ -18,7 +17,6 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>src/AmpProcessor.cpp</itemPath>
-      <itemPath>src/AmpWindow.cpp</itemPath>
       <itemPath>src/WavFileReader.cpp</itemPath>
       <itemPath>src/WavFileWriter.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
@@ -53,8 +51,6 @@
       </compileType>
       <item path="include/AmpProcessor.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/AmpWindow.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="include/WavFileHeader.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/WavFileReader.h" ex="false" tool="3" flavor2="0">
@@ -64,8 +60,6 @@
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/AmpProcessor.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/AmpWindow.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/WavFileReader.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -94,8 +88,6 @@
       </compileType>
       <item path="include/AmpProcessor.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/AmpWindow.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="include/WavFileHeader.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/WavFileReader.h" ex="false" tool="3" flavor2="0">
@@ -105,8 +97,6 @@
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/AmpProcessor.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/AmpWindow.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/WavFileReader.cpp" ex="false" tool="1" flavor2="0">
       </item>
