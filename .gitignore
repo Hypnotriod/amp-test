@@ -1,0 +1,7 @@
+build/
+dist/
+nbproject/private/
+data/output.wav
+*.sfk
+.dep.inc
+*.stackdump
