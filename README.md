@@ -1,3 +1,3 @@
 # amp-test
 
-Test of simple audio signal amplifier algorithm
+Test of simple nonlinear audio signal amplifier imitation algorithm
